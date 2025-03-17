@@ -1,6 +1,6 @@
 clc;clear;
 % 导入，计算黑点、白点
-filepath='C:\example\'; tiff格式照片路径
+filepath='C:\example\'; % tiff格式文件路径
 filename='DSC0%04d.tiff';
 outputfile='DSC0%04d.tiff';
 chara=readtable('.\characteristicCurves\5219');
