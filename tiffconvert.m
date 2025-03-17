@@ -1,6 +1,6 @@
 clc;clear;close all;
 % 1. 调用 dcraw 读取 .ARW 并转换为 16-bit TIFF
-filepath = 'E:\图片\2025\2025-02-27\';
+filepath = 'C:\example\'; % RAW格式文件路径
 filename = 'DSC0%04d.ARW';
 outputfile = 'DSC0%04d.tiff'
 for i=6995:7022
