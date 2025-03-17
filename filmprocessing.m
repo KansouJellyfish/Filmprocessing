@@ -16,7 +16,7 @@ Rw1=squeeze(mean(Rw1,[1 2]));
 R0avg=squeeze(mean(R0,[1 2]));
 
 % 开始逐张处理图像
-for n=6995:6995
+for n=1111:2222
     R=im2double(imread(fullfile(filepath,sprintf(filename,n)))); % 待处理图像
     for i=1:3
         % 计算通光率T
