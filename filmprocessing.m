@@ -6,7 +6,7 @@ outputfile='DSC0%04d.tiff';
 chara=readtable('.\characteristicCurves\fujipremium400');
 Rb=im2double(imread(fullfile(filepath,'black.tiff'))); % 黑点（数码底）
 Rw=im2double(imread(fullfile(filepath,'white.tiff'))); % 白点（数码底）
-R0=im2double(imread(fullfile(filepath,'flat.tiff'))); % H=-1.5
+R0=im2double(imread(fullfile(filepath,'flat.tiff'))); % EV=0
 Rbavg=squeeze(mean(Rb,[1 2])); % 求平均，沿第一维和第二维计算均值，去掉大小为1的维度，使结果变成1*3
 Rwavg=squeeze(mean(Rw,[1 2]));
 R0avg=squeeze(mean(R0,[1 2]));
@@ -38,7 +38,7 @@ for n=0001:0004
         D(:,:,i)=A(:,:,i)*k(i);
         
         %查找特性曲线得到曝光度
-        H(:,:,i)=interp1(y,x,D(:,:,i),'linear');
+        H(:,:,i)=interp1(y,x,D(:,:,i),'linear','extrap');
     end
     
     % 以胶卷的黑点、白点值进行归一化
