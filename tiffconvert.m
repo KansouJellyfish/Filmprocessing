@@ -6,5 +6,5 @@ outputfile='DSC0%04d.tiff';
 for i=0001:0004
     raw_filename=fullfile(filepath,sprintf(filename,i));
     % 使用 dcraw 转换 RAW 为 16 位 TIFF
-    system(['dcraw -4 -v -w -T "', raw_filename, '"']); % -4代表输出线性文件，-v表示显示信息，-w代表使用相机白平衡，-T代表输出16 bit tiff
+    system(['dcraw -4 -v -w -o 0 -T "', raw_filename, '"']); % -4代表输出线性文件，-v表示显示信息，-w代表使用相机白平衡，-T代表输出16 bit tiff
 end
